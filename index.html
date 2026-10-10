@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="EcoConnect citizen, volunteer, and city officer portal prototype." />
+    <title>EcoConnect | Better city. Brighter future.</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="EcoConnect home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>Eco<span>Connect</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation">
+        <span aria-hidden="true">☰</span>
+      </button>
+      <nav id="primary-navigation" aria-label="Primary navigation">
+        <a class="nav-link active" href="#home">Overview</a>
+        <a class="nav-link" href="#citizen">For citizens</a>
+        <a class="nav-link" href="#volunteer">Volunteer</a>
+        <a class="nav-link" href="#officer">City officer</a>
+      </nav>
+      <button class="profile-button" type="button" data-prototype-action="Profile tools are not connected in this prototype.">
+        <span aria-hidden="true">◉</span> My EcoConnect
+      </button>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">YOUR CITY, IN ACTION</p>
+          <h1 id="hero-title">Small actions.<br /><em>Real</em> change.</h1>
+          <p class="hero-text">Report an issue, join a local initiative, or keep your city moving forward—all from one calm, clear place.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#citizen">Report an issue <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="#volunteer">Explore initiatives</a>
+          </div>
+          <div class="trust-row" aria-label="EcoConnect community outcomes">
+            <span><b>24</b> active initiatives</span>
+            <span><b>1,280</b> community actions</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a greener neighborhood" role="img">
+          <div class="sun"></div><div class="cloud cloud-one"></div><div class="cloud cloud-two"></div>
+          <div class="hill hill-back"></div><div class="hill hill-front"></div>
+          <div class="tree tree-one"><i></i><b></b></div><div class="tree tree-two"><i></i><b></b></div>
+          <div class="home-card"><span>Community pulse</span><strong>Good things grow here.</strong><div class="pulse"><i></i><i></i><i></i><i></i></div></div>
+        </div>
+      </section>
+
+      <section class="quick-actions" aria-label="Choose your EcoConnect path">
+        <button class="quick-card citizen-card" type="button" data-jump="citizen"><span class="quick-icon">⌁</span><span><small>CITIZEN</small><b>See something?<br />Say something.</b></span><span aria-hidden="true">→</span></button>
+        <button class="quick-card volunteer-card" type="button" data-jump="volunteer"><span class="quick-icon">✳</span><span><small>VOLUNTEER</small><b>Turn care into<br />community action.</b></span><span aria-hidden="true">→</span></button>
+        <button class="quick-card officer-card" type="button" data-jump="officer"><span class="quick-icon">▦</span><span><small>CITY OFFICER</small><b>Focus on what<br />needs attention.</b></span><span aria-hidden="true">→</span></button>
+      </section>
+
+      <section class="portal-section citizen-section" id="citizen" aria-labelledby="citizen-title">
+        <div class="section-heading"><div><p class="eyebrow">CITIZEN DESK</p><h2 id="citizen-title">A clearer path to a cleaner city.</h2></div><p>Tell the right team what needs attention, then follow progress without chasing updates.</p></div>
+        <div class="citizen-grid">
+          <form class="issue-form surface" id="issue-form" novalidate>
+            <div class="form-heading"><span class="section-icon">⌁</span><div><h3>Report an environmental issue</h3><p>Fields map to <code>Environmental_Issue__c</code> when Salesforce integration is enabled.</p></div></div>
+            <label for="issue-type">Issue type <span aria-hidden="true">*</span></label>
+            <select id="issue-type" name="issue-type" required>
+              <option value="">Choose an issue type</option><option>Illegal Dumping</option><option>Pollution</option><option>Public Hazard</option><option>Other</option>
+            </select>
+            <div class="form-split"><div><label for="location">Location <span aria-hidden="true">*</span></label><input id="location" name="location" placeholder="Street, park, or landmark" required /></div><div><label for="priority">Priority</label><select id="priority" name="priority"><option>Medium</option><option>Low</option><option>High</option><option>Critical</option></select></div></div>
+            <label for="description">What did you notice? <span aria-hidden="true">*</span></label><textarea id="description" name="description" rows="4" placeholder="Include helpful details for the city team." required></textarea>
+            <button class="button button-primary full" type="submit">Send report <span aria-hidden="true">→</span></button>
+            <p class="integration-note"><span aria-hidden="true">ⓘ</span> Prototype only—submission is not connected to Salesforce.</p>
+          </form>
+          <article class="status-card surface"><div class="card-top"><div><p class="eyebrow">STATUS SUMMARY</p><h3>Your neighborhood</h3></div><button class="text-button" type="button" data-prototype-action="Live issue filtering is pending Salesforce data access.">View all</button></div><div class="status-meter"><div><span class="status-number">07</span><span>open reports</span></div><div class="ring" aria-label="71 percent of issues resolved this month"><b>71%</b><small>resolved</small></div></div><ul class="status-list"><li><span class="status-dot medium"></span><span><b>Parkside Trail</b><small>Illegal dumping · In Progress</small></span><time>2h</time></li><li><span class="status-dot high"></span><span><b>Riverwalk bridge</b><small>Water pollution · New</small></span><time>5h</time></li><li><span class="status-dot resolved"></span><span><b>Maple &amp; 8th</b><small>Public hazard · Resolved</small></span><time>1d</time></li></ul></article>
+        </div>
+      </section>
+
+      <section class="portal-section volunteer-section" id="volunteer" aria-labelledby="volunteer-title">
+        <div class="section-heading"><div><p class="eyebrow">VOLUNTEER HUB</p><h2 id="volunteer-title">Find your next good thing.</h2></div><p>Simple ways to spend a morning, meet your neighbors, and make a difference where it matters.</p></div>
+        <div class="initiative-grid">
+          <article class="initiative-card featured"><div class="initiative-visual river"><span>THIS WEEKEND</span><i aria-hidden="true">♧</i></div><div class="initiative-body"><div class="tag-row"><span class="tag">Waterways</span><span>Sat · 9:00 AM</span></div><h3>Riverbank renewal</h3><p>Help restore the trail edge with native planting and a friendly cleanup crew.</p><div class="initiative-footer"><span><b>8</b> spots open</span><button class="button button-small" type="button" data-prototype-action="This is a visual prototype. This action is not connected to Salesforce.">Register <span aria-hidden="true">→</span></button></div></div></article>
+          <article class="initiative-card"><div class="initiative-visual garden"><span>NEXT WEEK</span><i aria-hidden="true">✿</i></div><div class="initiative-body"><div class="tag-row"><span class="tag">Green spaces</span><span>Tue · 5:30 PM</span></div><h3>Community garden care</h3><p>Water, weed, and harvest alongside the team that keeps our shared garden thriving.</p><div class="initiative-footer"><span><b>12</b> spots open</span><button class="button button-small ghost" type="button" data-prototype-action="This is a visual prototype. This action is not connected to Salesforce.">Details</button></div></div></article>
+          <article class="initiative-card"><div class="initiative-visual street"><span>ONGOING</span><i aria-hidden="true">☼</i></div><div class="initiative-body"><div class="tag-row"><span class="tag">Clean streets</span><span>Flexible</span></div><h3>Adopt a block</h3><p>Choose a nearby block and keep it brilliant with supplies and city support.</p><div class="initiative-footer"><span><b>6</b> teams active</span><button class="button button-small ghost" type="button" data-prototype-action="Initiative details are visual-only in this prototype.">Explore</button></div></div></article>
+        </div>
+        <p class="data-caption">Initiative cards are presentation data only. Salesforce source intended: <code>Green_Initiative__c</code>.</p>
+      </section>
+
+      <section class="portal-section officer-section" id="officer" aria-labelledby="officer-title">
+        <div class="section-heading"><div><p class="eyebrow">CITY OFFICER WORKSPACE</p><h2 id="officer-title">Triage with confidence.</h2></div><p>Scan incoming reports, focus attention, and move each issue forward with a visible status.</p></div>
+        <div class="officer-dashboard surface"><div class="officer-stats"><div><span>Open issues</span><b>07</b><small>+2 today</small></div><div><span>Critical</span><b class="critical-number">01</b><small>Needs review</small></div><div><span>Resolved this week</span><b>18</b><small>+24% vs. last week</small></div></div><div class="table-toolbar"><div><h3>Issue queue</h3><p>Demo records only · no live record actions</p></div><div class="filter-group" role="group" aria-label="Filter demo issue queue"><button class="filter active" data-filter="all" type="button">All</button><button class="filter" data-filter="New" type="button">New</button><button class="filter" data-filter="In Progress" type="button">In progress</button></div></div><div class="table-wrap"><table><thead><tr><th scope="col">Issue</th><th scope="col">Location</th><th scope="col">Priority</th><th scope="col">Status</th><th scope="col"><span class="sr-only">Actions</span></th></tr></thead><tbody id="issue-rows"><tr data-status="New"><td><b>Waterway debris</b><small>ISS-0001 · Pollution</small></td><td>Riverwalk bridge</td><td><span class="priority high">High</span></td><td><span class="status-pill new">New</span></td><td><button class="row-action" type="button" data-prototype-action="Officer updates are pending Salesforce integration.">Review</button></td></tr><tr data-status="In Progress"><td><b>Overflowing bins</b><small>ISS-0002 · Public Hazard</small></td><td>Maple &amp; 8th</td><td><span class="priority medium">Medium</span></td><td><span class="status-pill progress">In Progress</span></td><td><button class="row-action" type="button" data-prototype-action="Officer updates are pending Salesforce integration.">Open</button></td></tr><tr data-status="New"><td><b>Unlawful dumping</b><small>ISS-0003 · Illegal Dumping</small></td><td>Parkside Trail</td><td><span class="priority critical">Critical</span></td><td><span class="status-pill new">New</span></td><td><button class="row-action" type="button" data-prototype-action="Officer updates are pending Salesforce integration.">Review</button></td></tr></tbody></table><p class="empty-state" id="empty-state" hidden>No demo issues match this filter.</p></div></div>
+        <p class="data-caption">Field labels are based on verified <code>Environmental_Issue__c</code> metadata: Issue Type, Location, Priority, Status, and Assigned Officer. No records are queried or updated.</p>
+      </section>
+    </main>
+
+    <dialog class="registration-dialog" id="registration-dialog" aria-labelledby="registration-title" aria-describedby="registration-description registration-disclosure">
+      <div class="registration-heading">
+        <div>
+          <p class="eyebrow">VOLUNTEER REGISTRATION</p>
+          <h2 id="registration-title">Join an initiative</h2>
+        </div>
+        <button class="dialog-close" type="button" aria-label="Close registration" data-close-registration>&times;</button>
+      </div>
+      <p class="registration-description" id="registration-description">Selected initiative</p>
+      <p class="registration-initiative" id="registration-initiative"></p>
+      <form class="registration-form" id="volunteer-registration-form" novalidate>
+        <label for="volunteer-name">Full name <span aria-hidden="true">*</span></label>
+        <input id="volunteer-name" name="name" autocomplete="name" aria-describedby="registration-feedback" required />
+        <label for="volunteer-email">Email address <span aria-hidden="true">*</span></label>
+        <input id="volunteer-email" name="email" type="email" autocomplete="email" aria-describedby="registration-feedback" required />
+        <label for="volunteer-phone">Phone number <span class="optional-label">Optional</span></label>
+        <input id="volunteer-phone" name="phone" type="tel" autocomplete="tel" />
+        <p class="registration-disclosure" id="registration-disclosure">Prototype only. This form does not submit a registration or create a Salesforce record.</p>
+        <p class="registration-feedback" id="registration-feedback" role="status" aria-live="polite"></p>
+        <div class="registration-actions">
+          <button class="button button-secondary" type="button" data-close-registration>Cancel</button>
+          <button class="button button-primary" type="submit">Check details</button>
+        </div>
+      </form>
+    </dialog>
+    <p class="sr-only" id="filter-status" role="status" aria-live="polite"></p>
+    <footer><a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">✦</span>Eco<span>Connect</span></a><p>Building a more livable city, together.</p><span>Prototype · Salesforce integration pending</span></footer>
+    <div class="toast" role="status" aria-live="polite" id="toast" hidden></div>
+    <script src="app.js"></script>
+  </body>
+</html>
